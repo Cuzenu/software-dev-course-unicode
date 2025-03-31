@@ -16,6 +16,16 @@ let inputString = "Hi";
 Expected Output:
 sumCodePoints: 177 // 'H' = 72, 'i' = 105, 72 + 105 = 177
 
+*/
+// Exercise 1: Retrieve and Add Two Code Points
+let inputString = "Hi"; // Input string
+let characterOne = inputString.charCodeAt(0); // Get the Unicode code point of the first character 'H'
+let characterTwo = inputString.charCodeAt(1); // Get the Unicode code point of the second character 'i'
+
+let sumCodePoints = characterOne + characterTwo; // Add the two code points together
+console.log("sumCodePoints: ", sumCodePoints); // Log the result to the console H = 72, i = 105, 72 + 105 = 177
+
+/*
 Exercise 2: Generate a String from Two Code Points
 Objective: Take two numeric Unicode code points,
 convert them to characters using String.fromCharCode,
@@ -32,6 +42,14 @@ let codePoint2 = 66;
 Expected Output:
 combinedString: "AB" // 65 = 'A', 66 = 'B', combined = "AB"
 
+*/
+// Exercise 2: Generate a String from Two Code Points
+let codePoint1 = 65; // Example code point for 'A'
+let codePoint2 = 66; // Example code point for 'B'
+let combinedString = String.fromCharCode(codePoint1, codePoint2); // Convert the code points to characters and combine them into a string
+console.log("combinedString: ", combinedString); // Log the result to the console, should output "AB" since 65 = 'A' and 66 = 'B'
+
+/*
 Exercise 3: Find the Character Difference
 Objective: Extract the Unicode code points of two given characters from a string
 and calculate the absolute difference between them.
@@ -47,9 +65,18 @@ let index2 = 2;
 
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
+*/
 
+//Exercise 3: Find the Character Difference
+let inputString3 = "Cat"; // Input string for the exercise
+let index1 = 0; // First index to compare (for 'C')
+let index2 = 2; // Second index to compare (for 't')
+let charCodePoint1 = inputString3.charCodeAt(index1); // Get the Unicode code point of the character at index 0 ('C')
+let charCodePoint2 = inputString3.charCodeAt(index2); // Get the Unicode code point of the character at index 2 ('t') // Get the Unicode code point of the character at index 2 ('t')
+let codePointDifference = Math.abs(charCodePoint1 - charCodePoint2); // Calculate the absolute difference between the two code points
+console.log("codePointDifference: ", codePointDifference); // Log the result to the console, should output 16 since 'C' = 67 and 't' = 116, |67 - 116| = -49, which is |49|
 
-
+/*
 Practice Problem #2
 
 Objective
@@ -86,15 +113,20 @@ Assign the result to a variable named swappedString.
 //Starter Code
 // Task 1
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let firstCodePoint = inputString1.charCodeAt(0); // Get the Unicode code point of the first character 'C'
+let thirdCodePoint = inputString1.charCodeAt(2); // Get the Unicode code point of the third character 'd'
 
 // Task 2
-let wordFromCodePoints; // Your code here
+let wordFromCodePoints = String.fromCharCode(72, 101, 108, 108); // Use String.fromCharCode to create the word "Hell"
 
 // Task 3
 let inputString2 = "Launch";
-let swappedString; // Your code here
+let swappedString = ""; // Initialize an empty string for the swapped result
+let firstCharCode = inputString2.charCodeAt(0); // Get the Unicode code point of the first character 'L'
+let lastCharCode = inputString2.charCodeAt(inputString2.length - 1); // Get the Unicode code point of the last character 'h'
+let firstChar = String.fromCharCode(lastCharCode); // Convert the last character's code point to a character ('h')
+let lastChar = String.fromCharCode(firstCharCode); // Convert the first character's code point to a character ('L')
+swappedString = firstChar + inputString2.slice(1, inputString2.length - 1) + lastChar; // Create the new string by combining the swapped characters with the middle part of the original string
 
 // Log all results
 console.log({
